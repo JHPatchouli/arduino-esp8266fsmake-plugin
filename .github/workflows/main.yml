@@ -1,0 +1,45 @@
+name: CI
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+    - uses: actions/checkout@v3
+    - uses: actions/setup-java@v3
+      with:
+        distribution: 'temurin' # See 'Supported distributions' for available options
+        java-version: '17'
+    
+    - name: Run a one-line script
+      run: |
+        sudo bash ./make.sh
+        cp -p ./dist/ESP8266FS-0.5.0.zip $GITHUB_WORKSPACE/
+    
+    - name: Create Release
+      id: create_release
+      uses: actions/create-release@v1
+      env:
+         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+         tag_name: 1.0
+         release_name: ESP8266FS 1.0
+         draft: false
+         prerelease: false
+    - name: Upload Release Asset
+      id: upload-release-asset
+      uses: actions/upload-release-asset@v1
+      env:
+         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+         upload_url: ${{ steps.create_release.outputs.upload_url }}
+         asset_path: ${{ github.workspace }}/ESP8266FS-0.5.0.zip
+         asset_name: ESP8266FS-0.5.0.zip
+         asset_content_type: application/zip
