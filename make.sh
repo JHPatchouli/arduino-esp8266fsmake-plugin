@@ -25,7 +25,7 @@ pushd bin
 mkdir -p $INSTALLDIR/tools
 rm -rf $INSTALLDIR/tools/ESP8266FSMake
 mkdir -p $INSTALLDIR/tools/ESP8266FSMake/tool
-jar cvfe $INSTALLDIR/tools/ESP8266FSMake/tool/esp8266fs.jar com.esp8266.mkspiffsmake.ESP8266FSMake *
+jar cvfe $INSTALLDIR/tools/ESP8266FSMake/tool/esp8266fsmake.jar com.esp8266.mkspiffsmake.ESP8266FSMake *
 popd
 
 dist=$PWD/dist
