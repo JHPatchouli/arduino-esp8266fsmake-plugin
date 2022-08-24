@@ -35,8 +35,8 @@ jobs:
       env:
          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-         tag_name: ${{ github.run_id }}
-         release_name: ${{ github.run_id }}
+         tag_name: PASS-${{ github.run_id }}
+         release_name: ESP8266FSMake-${{ github.run_id }}
          draft: false
          prerelease: false
     - name: Upload Release Asset
@@ -47,5 +47,5 @@ jobs:
       with:
          upload_url: ${{ steps.create_release.outputs.upload_url }}
          asset_path: ${{ github.workspace }}/ESP8266FSMake-1.0.zip
-         asset_name: ESP8266FS-1.0.zip
+         asset_name: ESP8266FSMake-${{ github.run_id }}.zip
          asset_content_type: application/zip
