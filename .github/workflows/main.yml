@@ -25,6 +25,7 @@ jobs:
         export CLASSPATH=.:${JAVA_HOME}/lib
         export PATH=${JAVA_HOME}/bin:$PATH
         javac -version
+        sudo chmod +x ./make.sh
         ./make.sh
         cp -p ./dist/ESP8266FSMake-1.0.zip $GITHUB_WORKSPACE/
     
