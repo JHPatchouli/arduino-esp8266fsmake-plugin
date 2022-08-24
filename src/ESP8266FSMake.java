@@ -23,21 +23,16 @@
 
 package com.esp8266.mkspiffsmake;
 
-import org.apache.commons.codec.digest.DigestUtils;
 import processing.app.BaseNoGui;
 import processing.app.Editor;
 import processing.app.PreferencesData;
-import processing.app.Sketch;
 import processing.app.debug.TargetPlatform;
-import processing.app.helpers.FileUtils;
 import processing.app.helpers.ProcessUtils;
 import processing.app.tools.Tool;
 
 import javax.swing.*;
 import java.io.File;
-import java.io.IOException;
 import java.io.InputStreamReader;
-import java.lang.reflect.InvocationTargetException;
 
 /**
  * Example Tools menu entry.
@@ -101,9 +96,7 @@ public class ESP8266FSMake implements Tool {
         thread.start();
     }
 
-    private String getBuildFolderPath(Sketch s) {
-        // first of all try the getBuildPath() function introduced with IDE 1.6.12
-        // see commit arduino/Arduino#fd1541eb47d589f9b9ea7e558018a8cf49bb6d03
+    /*private String getBuildFolderPath(Sketch s) {
         try {
             String buildpath = s.getBuildPath().getAbsolutePath();
             return buildpath;
@@ -135,7 +128,7 @@ public class ESP8266FSMake implements Tool {
             }
         }
         return "";
-    }
+    }*/
 
     private long getIntPref(String name) {
         String data = BaseNoGui.getBoardPreferences().get(name);
