@@ -16,7 +16,7 @@ jobs:
     - uses: actions/setup-java@v3
       with:
         distribution: 'adopt-hotspot' # See 'Supported distributions' for available options
-        java-version: '8.0.202'
+        java-version: '8.0.181'
     
     - name: Run a one-line script
       run: |
