@@ -19,6 +19,7 @@ echo "lib_path: $lib_path"
 set -e
 
 mkdir -p bin
+javac -version
 javac -target 8 -cp "$pde_path:$core_path:$lib_path" src/ESP8266FSMake.java -d bin 
 
 pushd bin
