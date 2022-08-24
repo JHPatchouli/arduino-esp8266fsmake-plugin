@@ -22,6 +22,11 @@ jobs:
       run: |
         sudo bash ./make.sh
         cp -p ./dist/ESP8266FSMake-1.0.zip $GITHUB_WORKSPACE/
+        javapath=`find /opt/hostedtoolcache/Java_Adopt_jdk/ -type d -iname "x64"`
+        export JAVA_HOME=$javapath
+        export CLASSPATH=.:${JAVA_HOME}/lib
+        export PATH=${JAVA_HOME}/bin:$PATH
+        javac -version
     
     - name: Create Release
       id: create_release
