@@ -33,5 +33,5 @@ dist=$PWD/dist
 rev=1.0
 mkdir -p $dist
 pushd $INSTALLDIR/tools
-zip -r $dist/ESP8266FSMake-$rev.zip ESP8266FSMake/
+zip -r $dist/ESP8266FSMk-$rev.zip ESP8266FSMake/
 popd
