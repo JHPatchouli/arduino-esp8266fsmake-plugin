@@ -13,7 +13,7 @@ Tested with the following Arduino IDE versions: 1.6.5-r2,
 #### Source Project Download
 - Download the tool archive from [releases page](https://github.com/esp8266/arduino-esp8266fs-plugin/releases/latest).
 #### Only Make Filesystem Image Version Download
-- Download the tool archive from [releases page](https://github.com/esp8266/arduino-esp8266fs-plugin/releases/latest).
+- Download the tool archive from [releases page](https://github.com/JHPatchouli/arduino-esp8266fsmake-plugin/releases/latest).
 - In your Arduino sketchbook directory, create `tools` directory if it doesn't exist yet. You can find the location of your sketchbook directory in the Arduino IDE at **File > Preferences > Sketchbook location**.
 - Unpack the tool into `tools` directory (the path will look like `<sketchbook directory>/tools/ESP8266FS/tool/esp8266fs.jar)`.
 - Restart Arduino IDE. 
