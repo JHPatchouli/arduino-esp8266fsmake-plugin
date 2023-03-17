@@ -36,7 +36,7 @@ jobs:
          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
          tag_name: PASS-${{ github.run_id }}
-         release_name: ESP8266FSMk-${{ github.run_id }}
+         release_name: ESP8266FSMake-${{ github.run_id }}
          draft: false
          prerelease: false
     - name: Upload Release Asset
