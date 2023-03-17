@@ -52,5 +52,5 @@ jobs:
       with:
          upload_url: ${{ steps.create_release.outputs.upload_url }}
          asset_path: ${{ github.workspace }}/ESP8266FSMk-1.0.zip
-         asset_name: ESP8266FSMake-${{ github.run_id }}.zip
+         asset_name: ESP8266FSMk-${{ github.run_id }}.zip
          asset_content_type: application/zip
